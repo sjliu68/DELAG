@@ -10,3 +10,14 @@ torch==1.13.1
 gpytorch==1.11
 numpy==1.26.4
 ```
+
+### 
+
+1. Run s1_train.py, train individual pixels and get 100 sets of ATC parameters 
+
+2. Run s2_predict.py, get 100 predictions for ensemble learning 
+
+3. Run s3_show_predict.py, show predictions and test performance before GP
+
+4. Run s4_GP.py, train GP model for a specific date with partial observations. In the demo, date = '20230402', which doy = 92
+
