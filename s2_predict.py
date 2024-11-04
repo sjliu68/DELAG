@@ -5,6 +5,9 @@ Created on Thu Aug 29 02:08:59 2024
 @author: skrisliu
 
 Create a folder named 'save100' before running this script
+
+The 'save100' folder is not auto created on purpose, because this script will generate 
+100 predictions of each Day of Year over one year 365 days (~easily 10+ GB).  
 """
 
 import numpy as np
@@ -41,6 +44,7 @@ idx2 = np.load(site + '/' + site + year + '-idx2.npy')
 
 
 if True:
+    # load models, merge multiple models into a single one
     models = []
     knames = glob.glob(site + '/model/'+ site+year + '*.npy')
     kname = knames[0]
@@ -51,8 +55,9 @@ if True:
     
 
     ## iter
-    day = 200
-    modeln = 70
+    day = 200 # preset initialized value, for single-testing
+    modeln = 70 # preset initialized value, for single-testing
+    
     for day in np.arange(365):
         print(day)
         
